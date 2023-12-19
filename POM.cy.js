@@ -2,9 +2,11 @@
 
 import { LoginPage } from "./Pages/login.cy"
 import { Dashboard } from "./Pages/Dashboard.cy"
+import { Admin } from "./Pages/Admin.cy"
 
 const login = new LoginPage()
 const dashboard=new Dashboard()
+const admin=new Admin()
 
 describe('All Login Functions',()=>
 {
@@ -63,7 +65,7 @@ it ('verifyDashboardMyActions',()=>{
             }
             )    
 
-            it.only ('verifyDashboardEmployeesOnLeaveToday',()=>{
+            it('verifyDashboardEmployeesOnLeaveToday',()=>{
     
                 dashboard.verifyDashboardEmployeesOnLeaveToday()
                 }
@@ -72,4 +74,23 @@ it ('verifyDashboardMyActions',()=>{
 }
 
 
+)
+describe('Admin',()=>{
+    beforeEach(function(){
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        login.enterUserName('Admin')
+        login.enterPassword('admin123')
+        login.clickLogin()
+    })
+
+it.only('verifyAdmin',()=>
+{
+
+    admin.verifyAdminTab()
+    //cy.verifyAdminTab.click()
+}
+
+)
+
+}
 )
