@@ -87,7 +87,7 @@ it.only('verifyAdmin',()=>
 {
 
     admin.verifyAdminTab()
-    //cy.verifyAdminTab.click()
+    admin.adduser()
 }
 
 )

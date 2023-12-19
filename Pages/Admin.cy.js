@@ -1,6 +1,7 @@
 export class Admin{
 
 admin_tab=':nth-child(1) > .oxd-main-menu-item'
+addUser='.orangehrm-header-container > .oxd-button'
 
 verifyAdminTab(){
 
@@ -10,4 +11,10 @@ verifyAdminTab(){
 
 }
 
+adduser()
+{
+
+cy.get(this.addUser).click()
+cy.should('contain','Add')
+}
 }
